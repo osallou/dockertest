@@ -35,20 +35,26 @@ LABEL ANNOT.Name="blast+" \
 USER root
 
 # Install BLAST toolkit
+#RUN apt-get update && \
+#    apt-get install -y \
+#      ncbi-blast+=2.2.28-2 && \
+#    apt-get clean && \
+#    apt-get purge && \
+#    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 RUN apt-get update && \
     apt-get install -y \
-      ncbi-blast+=2.2.28-2 && \
+      apache2 && \
     apt-get clean && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-USER biodocker
+#USER biodocker
 
 CMD ["blastn", "-help"]
 
 ##################### INSTALLATION END #####################
 
 # File Author / Maintainer
-MAINTAINER Felipe da Veiga Leprevost <felipe@leprevost.com.br>
-# Modified by Felipe da Veiga Leprevost 08-27-2015
+MAINTAINER Olivier Sallou <olivier.sallou@irisa.fr>
 
