@@ -42,12 +42,8 @@ USER root
 #    apt-get purge && \
 #    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN apt-get update && \
-    apt-get install -y \
-      apache2 && \
-    apt-get clean && \
-    apt-get purge && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN touch /root/test1.txt
+RUN touch /root/test2.txt
 
 #USER biodocker
 
