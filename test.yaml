@@ -1,0 +1,4 @@
+test:
+    commands:
+        - uname -a
+        - ls /repo
